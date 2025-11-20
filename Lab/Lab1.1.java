@@ -14,4 +14,5 @@ public class Main {
 		System.out.println("The sum is: " + num1 + " + " + num2 + " = " + sum);
 		scanner.close();
 	}
+
 }
