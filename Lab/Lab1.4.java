@@ -33,4 +33,5 @@ public class Main {
         System.out.println("คะแนนที่ป้อน: " + score);
         System.out.println("เกรดที่ได้: " + grade);
     }
+
 }
