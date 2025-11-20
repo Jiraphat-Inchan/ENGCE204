@@ -14,7 +14,7 @@ public class Lab16 {
 	        try {
 	            multiplier = scanner.nextInt();
 	        } catch (java.util.InputMismatchException e) {
-	            System.out.println("⚠️ ข้อผิดพลาด: กรุณาป้อนเฉพาะจำนวนเต็มเท่านั้น");
+	            System.out.println("ข้อผิดพลาด: กรุณาป้อนเฉพาะจำนวนเต็มเท่านั้น");
 	            scanner.close();
 	            return; 
 	        }
