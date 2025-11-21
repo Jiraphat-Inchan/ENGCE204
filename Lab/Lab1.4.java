@@ -1,6 +1,6 @@
 package Lab1;
 
-import java.util.InputMismatchException; // นำเข้า Exception ตัวนี้
+import java.util.InputMismatchException; 
 import java.util.Scanner;
 
 public class Lab14 {
@@ -42,3 +42,4 @@ public class Lab14 {
 	        }
 	    }
 	}
+
