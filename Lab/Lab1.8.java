@@ -3,28 +3,27 @@ package Lab1;
 import java.util.Scanner;
 
 public class Lab1_8 {
+ public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
 
-	    public static void main(String[] args) {
-	        Scanner sc = new Scanner(System.in);
+     int N = sc.nextInt(); 
 
-	        System.out.print("Enter Number : ");
-	        int N = sc.nextInt();
+     int[] num = new int[N];
 
-	        int[] numbers = new int[N];
+     for (int i = 0; i < N; i++) {
+         num[i] = sc.nextInt();
+     }
 
-	        for (int i = 0; i < N; i++) {
-	            numbers[i] = sc.nextInt();
-	        }
+     int max = num[0];
+     for (int i = 1; i < N; i++) {
+         if (num[i] > max) {
+             max = num[i];
+         }
+     }
 
-	        int max = numbers[0];
-	        for (int i = 1; i < N; i++) {
-	            if (numbers[i] > max) {
-	                max = numbers[i];
-	            }
-	        }
+     System.out.println(max); 
 
-	        System.out.println(max);
-
-	        sc.close();
-	    }
-	}
+     sc.close();
+ }
+ 
+}
