@@ -8,7 +8,7 @@ public class Lab1_9 {
 	        Scanner scanner = new Scanner(System.in);     
 	        
 	        if (!scanner.hasNextInt()) {
-	            System.out.println("ข้อผิดพลาด: โปรดป้อนจำนวนเต็มสำหรับ N");
+	            System.out.println("Error");
 	            scanner.close();
 	            return;
 	        }
