@@ -1,53 +1,36 @@
 package Lab1;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
-	
-public class Lab10 {
+
+public class Lab1_10 {
 
 	    public static double calculateArea(double width, double height) {
-	        return width * height;
+	        double area = width * height;
+	        return area;
 	    }
 
 	    public static void main(String[] args) {
-	        try (Scanner scanner = new Scanner(System.in)) {
-	            System.out.println("--- ป้อนพื้นที่สี่เหลี่ยมผืนผ้า ---");
+	        Scanner scanner = new Scanner(System.in);
 
-	            double width = readDoubleInput(scanner, "ป้อนความกว้าง (width) เป็น double: ");
-	            if (width < 0) {
-	                return;
-	            }
+	        System.out.print("ป้อนความกว้าง : ");
+	        if (scanner.hasNextDouble()) {
+	            double width = scanner.nextDouble();
+	            System.out.print("ป้อนความสูง : ");
 
-	            double height = readDoubleInput(scanner, "ป้อนความสูง (height) เป็น double: ");
-	            if (height < 0) {
-	                return;
-	            }
-
-	            double areaResult = calculateArea(width, height);
-
-	            System.out.println("----------------------------------------");
-	            System.out.println("width: " + width);
-	            System.out.println("height: " + height);
-	            System.out.printf("ผลลัพธ์พื้นที่ที่คำนวณได้คือ: %.2f\n", areaResult);
-
-	        } catch (Exception e) {
-	            System.err.println("ข้อผิดพลาดที่ไม่คาดคิดเกิดขึ้น: " + e.getMessage());
-	        }
-	    }
-
-	    private static double readDoubleInput(Scanner scanner, String prompt) {
-	        System.out.print(prompt);
-	        try {
 	            if (scanner.hasNextDouble()) {
-	                return scanner.nextDouble();
+	                double height = scanner.nextDouble();
+
+	                double areaResult = calculateArea(width, height);
+
+	                System.out.println("พื้นที่ที่คำนวณได้คือ: " + areaResult);
 	            } else {
-	                System.out.println("ข้อผิดพลาด: กรุณาป้อน **ตัวเลข** ชนิด double เท่านั้น");
-	                scanner.next();
-	                return -1.0;
+	                System.out.println("Error: โปรดป้อนค่าความสูงเป็นตัวเลขทศนิยมที่ถูกต้อง");
 	            }
-	        } catch (InputMismatchException e) {
-	            System.out.println("ข้อผิดพลาด: การป้อนข้อมูลไม่ตรงกับชนิดที่กำหนด");
-	            return -1.0;
+	        } else {
+	            System.out.println("Error: โปรดป้อนค่าความกว้างเป็นตัวเลขทศนิยมที่ถูกต้อง");
 	        }
+
+	        scanner.close(); 
 	    }
 	}
+
