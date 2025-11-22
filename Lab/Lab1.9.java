@@ -1,45 +1,30 @@
 package Lab1;
 
 import java.util.Scanner;
-
+import java.util.Arrays;
+	
 public class Lab1_9 {
 	    
 	    public static void main(String[] args) {
-	        Scanner scanner = new Scanner(System.in);     
-	        
-	        if (!scanner.hasNextInt()) {
-	            System.out.println("Error");
-	            scanner.close();
-	            return;
-	        }
-	        int N = scanner.nextInt();
-	        
-	        if (N <= 0) {
-	            System.out.println("Error");
-	            scanner.close();
-	            return;
-	        }
-	        
-	        long ttSum = 0;
-	        
-	       
-	        for (int i = 0; i < N; i++) {
-	        	
-	            if (!scanner.hasNextInt()) {
-	                System.out.println("Error");
-	                scanner.close();
-	                return;
-	            }
-	            
-	            int currentValue = scanner.nextInt();
-	            ttSum += currentValue; 
+	        Scanner scanner = new Scanner(System.in);
+
+	        int n = scanner.nextInt();
+
+	        int[] numbers = new int[n];
+
+	        for (int i = 0; i < n; i++) {
+	            numbers[i] = scanner.nextInt();
 	        }
 
-	        double average = (double) ttSum / N; 
-	        
-	        System.out.println("Sum: " + ttSum);
-	        System.out.printf("Average:%.1f", average); 
-	        
+	        double sum = 0;
+	        for (int number : numbers) {
+	            sum += number;
+	        }
+
+	        double average = sum / n;
+
+	        System.out.println(average);
+
 	        scanner.close();
 	    }
 	}
