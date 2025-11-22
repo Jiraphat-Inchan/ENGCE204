@@ -1,30 +1,47 @@
-package Lab;
+package Lab1;
+
 import java.util.Scanner;
 
-public class Lab19 {
-	
+public class Lab1_9 {
+	    
 	    public static void main(String[] args) {
-	      
-	        Scanner scanner = new Scanner(System.in);
-
-	        System.out.print("ป้อนจำนวนตัวเลขทั้งหมด (N): ");
+	        Scanner scanner = new Scanner(System.in);    
+	        System.out.print("ระบุจำนวนตัวเลขทั้งหมด (N): ");
+	        
+	        if (!scanner.hasNextInt()) {
+	            System.out.println("ข้อผิดพลาด: โปรดป้อนจำนวนเต็มสำหรับ N");
+	            scanner.close();
+	            return;
+	        }
 	        int N = scanner.nextInt();
-
-	        int[] numbers = new int[N];
-	        double sum = 0; 
-
-	        System.out.println("โปรดป้อนตัวเลข " + N + " ตัว:");
+	        
+	        if (N <= 0) {
+	            System.out.println("ข้อผิดพลาด: จำนวนตัวเลขต้องมากกว่าศูนย์");
+	            scanner.close();
+	            return;
+	        }
+	        
+	        long ttSum = 0;
+	        
+	        System.out.println("\n กรุณาป้อนตัวเลขทีละตัว (N):");
 
 	        for (int i = 0; i < N; i++) {
-	            System.out.print((i + 1) + ": ");
-	            numbers[i] = scanner.nextInt();
-	            sum += numbers[i]; 
+	            System.out.print("N " + (i + 1) + ": ");
+	            
+	            if (!scanner.hasNextInt()) {
+	                System.out.println("ข้อผิดพลาด: ข้อมูลที่ป้อนต้องเป็นตัวเลข");
+	                scanner.close();
+	                return;
+	            }
+	            
+	            int currentValue = scanner.nextInt();
+	            ttSum += currentValue; 
 	        }
 
-	        double average = sum / N;
-
-	        System.out.println("ผลรวมของตัวเลขทั้งหมด: " + sum);
-	        System.out.printf("ค่าเฉลี่ย (Average): %.1f%n", average);
+	        double average = (double) ttSum / N; 
+	        
+	        System.out.println("Sum: " + ttSum);
+	        System.out.printf("(Average):%.1f", average); 
 	        
 	        scanner.close();
 	    }
