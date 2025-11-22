@@ -1,18 +1,20 @@
+package Lab1;
+
 import java.util.Scanner;
+	
+public class Lab1_1 {
 
-public class Main {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter first number: ");
+	    public static void main(String[] args) {
+	        Scanner input = new Scanner(System.in);
 
-		int num1 = scanner.nextInt();
-		System.out.println("Enter second number: ");
+	        int num1 = input.nextInt();
 
-		int num2 = scanner.nextInt();
+	        int num2 = input.nextInt();
 
-		int sum = num1 + num2;
-		System.out.println("The sum is: " + num1 + " + " + num2 + " = " + sum);
-		scanner.close();
+	        int sum = num1 + num2;
+
+	        System.out.println(sum);
+
+	        input.close();
+	    }
 	}
-
-}
