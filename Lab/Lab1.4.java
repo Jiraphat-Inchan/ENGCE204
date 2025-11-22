@@ -1,45 +1,33 @@
 package Lab1;
 
-import java.util.InputMismatchException; 
 import java.util.Scanner;
+	
+public class Lab1_4 {
 
-public class Lab14 {
 	    public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
-	        System.out.println("--- โปรแกรมคำนวณเกรด ---");
-	        System.out.print("กรุณาป้อนคะแนนสอบ (0-100): ");
 
-	        try {
-	            int score = scanner.nextInt();
-	            String grade;
+	        int score = scanner.nextInt();
 
-	            if (score >= 80 && score <= 100) {
-	                grade = "A";
-	            } else if (score >= 70 && score < 80) {
-	                grade = "B";
-	            } else if (score >= 60 && score < 70) {
-	                grade = "C";
-	            } else if (score >= 50 && score < 60) {
-	                grade = "D";
-	            } else if (score >= 0 && score < 50) {
-	                grade = "F";
-	            } else {
-	                grade = "คะแนนไม่ถูกต้อง (Score out of range: 0-100)";
-	                System.out.println("\n--- ผลลัพธ์ ---");
-	                System.out.println(grade);
-	                return;
-	            }
+	        String grade;
 
-	            System.out.println("\n--- ผลลัพธ์ ---");
-	            System.out.println("คะแนนที่ป้อน: " + score);
-	            System.out.println("เกรดที่ได้: " + grade);
-	            System.out.println("-----------------");
-
-	        } catch (InputMismatchException e) {
-	            System.out.println("\n*** ข้อผิดพลาด: กรุณาป้อนค่าเป็นตัวเลขจำนวนเต็มเท่านั้น ***");
-	        } finally {
-	            scanner.close();
+	        if (score >= 80 && score <= 100) {
+	            grade = "A";
+	        } else if (score >= 70 && score <= 79) {
+	            grade = "B";
+	        } else if (score >= 60 && score <= 69) {
+	            grade = "C";
+	        } else if (score >= 50 && score <= 59) {
+	            grade = "D";
+	        } else if (score >= 0 && score <= 49) {
+	            grade = "F";
+	        } else {
+	            grade = "Error"; 
 	        }
+
+	        System.out.println(grade);
+
+	        scanner.close();
 	    }
 	}
 
