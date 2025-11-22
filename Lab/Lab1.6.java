@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class Lab1_6 {
 
 	    public static void main(String[] args) {
-	        Scanner scanner = new Scanner(System.in);
-
-	        System.out.println("กรุณาป้อนตัวเลขแม่สูตรคูณ:");
-
-	        int multiplier = scanner.nextInt();
-
-	        for (int i = 1; i <= 12; i++) {
-	            int result = multiplier * i;
-
-	            System.out.println(multiplier + " x " + i + " = " + result);
+	        Scanner myInput = new Scanner(System.in);
+	        System.out.println("ใส่เลขแม่สูตรคูณที่ต้องการ:");
+	        
+	        int myMultiplier = myInput.nextInt();
+	        int factor = 1; 
+	        
+	        while (factor <= 12) { 
+	            int product = myMultiplier * factor;
+	            System.out.println(myMultiplier + " x " + factor + " = " + product);
+	            factor++; 
 	        }
 
-	        scanner.close();
+	        myInput.close();
 	    }
 	}
