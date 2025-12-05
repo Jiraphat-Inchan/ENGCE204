@@ -37,10 +37,13 @@ class DatabaseConnection {
 public class Lab3_5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter connection string: ");
+        
         String connStr = scanner.nextLine();
 
         DatabaseConnection dbConnection = new DatabaseConnection(connStr);
-       
+        
         dbConnection.connect();
 
         dbConnection.disconnect();
