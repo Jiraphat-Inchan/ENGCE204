@@ -64,3 +64,19 @@ public class Main {
 
             for (int i = 0; i < n; i++) {
                 String input = sc.nextLine();
+                if (input.equals("SET_POLICY")) {
+                    if (sc.hasNextInt()) {
+                        int newMax = sc.nextInt();
+                        sc.nextLine();
+                        AuditRecord.setPolicy(newMax);
+                    }
+                } else {
+                    record = record.addMessage(input);
+                }
+            }
+        }
+
+        record.displayLog();
+        sc.close();
+    }
+}
